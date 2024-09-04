@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { listaProdutos } from "../../data/listaProdutos";
 
 export default function Produtos(){
@@ -30,7 +31,7 @@ export default function Produtos(){
                 <td>{produto.desc}</td>
                 <td>{produto.preco}</td>
                 <td><img src={produto.foto} alt={produto.nome}/></td>
-                <td><button>Editar</button><button>Excluir</button></td>
+                <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link> </td>
               </tr>
             ))}
           </tbody>
