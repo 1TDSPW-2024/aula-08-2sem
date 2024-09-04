@@ -12,6 +12,9 @@ export default function Menu() {
         <MenuItem>
           <Link to="/produtos">Produtos</Link>
         </MenuItem>
+        <MenuItem>
+          <Link to="/users">Usuários</Link>
+        </MenuItem>
       </MenuList>
     </Nav>
   );
