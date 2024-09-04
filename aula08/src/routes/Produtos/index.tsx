@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
-import { listaProdutos } from "../../data/listaProdutos";
+import { TipoProduto } from "../../types";
 
 export default function Produtos(){
 
       //MUDANDO O TÍTULO DA PÁGINA!!!
       document.title = "PRODUTOS";
+
+      const listaProdutosString = localStorage.getItem("lista") || '[]';
+
+      const lista:TipoProduto[] = JSON.parse(listaProdutosString);
 
     return(
       <div>
@@ -24,7 +28,7 @@ export default function Produtos(){
           </thead>
 
           <tbody>
-            {listaProdutos.map((produto)=>(
+            {lista.map((produto)=>(
               <tr key={produto.id}>
                 <td>{produto.nome}</td>
                 <td>{produto.marca}</td>
@@ -39,7 +43,7 @@ export default function Produtos(){
           <tfoot>
             <tr>
               <td colSpan={6}>
-                  Total de registros - <span>{listaProdutos.length}</span>
+                  Total de registros - <span>{lista.length}</span>
 
               </td>
             </tr>
